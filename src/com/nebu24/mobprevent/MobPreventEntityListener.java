@@ -15,11 +15,11 @@ public class MobPreventEntityListener implements Listener {
 	
 	@EventHandler
 	public void PreventSpawn(CreatureSpawnEvent event) {
-		if(event.getEntityType() == EntityType.ENDERMAN) {
+		if(event.getEntityType() == EntityType.ENDERMAN &&
+				event.getEntityType() == EntityType.SLIME) {
 			event.setCancelled(true);
 			
 		}
-		plugin.getLogger().info("Enderman spawned!");
 	}
 
 }
